@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const Button = styled.button`
     display: flex;
     flex: 0 0 auto;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     margin: 0px 0px 0px 20px;
     border-radius: 50px;
     border: 0;

@@ -111,6 +111,7 @@ export const Content = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
+    height: 318px;
 `;
 
 export const Cards = styled.div`
@@ -126,6 +127,7 @@ export const Card1 = styled.img`
     display: flex;
     flex: 0 0 auto;
     width: 100%;
+    height: 318px;
     object-fit: cover;
     box-sizing: border-box;
     border-top-left-radius: 10px;

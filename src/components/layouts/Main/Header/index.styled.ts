@@ -7,8 +7,7 @@ export const Header = styled.header`
     align-items: center;
     justify-content: center;
     color: ${props => props.theme.textColor};
-    box-shadow: 0px 0px 5px ${props => props.theme.accentColor1};
-    background-color: ${props => props.theme.backgroundColor};
+    // background-color: ${props => props.theme.backgroundColor};
     top: 0;
     position: sticky;
     overflow: hidden;
@@ -26,8 +25,10 @@ export const Content = styled.div`
     align-items: center; 
     width: 100%;
     height: 100%;
+    box-shadow: 0px 0px 5px ${props => props.theme.accentColor1};
     padding: 0px 20px;
     background-color: ${props => props.theme.backgroundColor};
+    border-radius: 10vmin;
     box-sizing: border-box;
 
     @media (min-width: 1200px){
@@ -50,8 +51,8 @@ export const Content = styled.div`
 export const Logo = styled.div`
     display: flex;
     width: 100%;
-    flex: 1 1 auto; 
-    flex-direction: column;
+    flex: 1 1 auto;
+    flex-direction: row;
     align-items: flex-start;
     margin: 10px 0px;
 `;
@@ -61,7 +62,8 @@ export const Img = styled.img`
     height: 30px;
 `;
 export const Name = styled.span`
-    display: flex;
+    display: inline-flex;
+    justify-self: center !important;
     align-items: center;
     font-size: ${props => props.theme.textSizeTextM};
     font-weight: 500;
@@ -76,7 +78,16 @@ export const Name = styled.span`
     }
 `;
 
+export const LogoWrapper = styled.div`
+    justify-self: flex-start !important;
+    display: inline-flex;
+    width: 50%;
+`;
+
 export const Buttons = styled.div`
    display:flex;
 `;
 
+export const myBlock = styled.div`
+    self-align: end;
+`;

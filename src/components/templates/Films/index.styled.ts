@@ -41,6 +41,19 @@ export const Content = styled.div`
     }
 `;
 
+export const Background = styled.img`
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 75%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+`;
+
 
 export const Title = styled.span`
     letter-spacing: 1px;
@@ -48,7 +61,7 @@ export const Title = styled.span`
     display: flex;
     flex: 0 0 auto;
     width: 100%;
-    margin: 50px 0px;
+    margin: .5em 0px;
     align-items: center;
     box-sizing: border-box;
     font-size: ${props => props.theme.textSizeTitle};
@@ -86,4 +99,8 @@ export const List = styled.div`
     @media (max-width: 576px)  {
         grid-template-columns: 1fr 1fr ;
     }
+`;
+
+export const Search = styled.input`
+    
 `;
