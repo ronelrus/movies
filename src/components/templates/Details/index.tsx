@@ -10,38 +10,35 @@ import Torrent from "./TorrentItem";
 import { AiTwotoneLike } from "react-icons/ai";
 import Link from "next/link";
 import { BiTimeFive } from "react-icons/bi";
-import { Context } from "@/components/common/Modal/ModalContext";
+import { ModalContext } from "@/components/common/Modal/ModalContext";
 import useComments from "@/hooks/useComments";
-import { Trash } from 'react-bootstrap-icons';
 
 const Details = React.FC<> = () => {
   const router = useRouter();
-  const { film } = useContext(Context);
+  const { film } = useContext(ModalContext);
   const filmId = film || router.query.id;
   const { filmRetrieve, isLoading } = useFilmRetrieve(
     (filmId as string) || ''
   );
 
   const { comments, updateComments, deleteComment } = useComments(filmId);
-  globalThis.comments = comments;
   const [comment, useComment] = useState({
     name: '',
     text: ''
   });
 
-  const onCommentChange = (e) => {
-    useComment((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  const onCommentChange = (e : Event) => {
+    useComment((prev) => ({ ...prev, [e.target?.name]: e.target?.value }))
   };
 
-  const onSendComment = (e) => {
+  const onSendComment = (e : Event) => {
     if (comment.name && comment.text) {
       updateComments(filmId, comment);
       useComment({ name: '', text: '' });
     }
-    console.log(comments);
   };
 
-  const onDeleteComment = (comment) => {
+  const onDeleteComment = (comment : string) => {
     deleteComment(comment);
   };
 
@@ -137,8 +134,8 @@ const Details = React.FC<> = () => {
               <Style.CommentTextInput name="text" onChange={onCommentChange} value={comment.text} placeholder="Комментарий" />
               <Style.CommentSendButton onClick={onSendComment}>Отправить</Style.CommentSendButton>
             </Style.CommentForm>
-            <Style.AllComments>
-              {comments.toReversed().map(elem => (
+            <Style.AllComments key={filmId}>
+              {comments.length != 0 ? comments.toReversed().map(elem => (
                 <Style.Comment>
                     <Style.CommentName> {elem.name} </Style.CommentName>
                     <Style.CommentText> {elem.text} </Style.CommentText>
@@ -146,7 +143,11 @@ const Details = React.FC<> = () => {
                     onDeleteComment(elem);
                   }}> Удалить </Style.CommentButton>
                 </Style.Comment>
-              ))}
+              )) : (
+                <Style.CommentEmpty>
+                    <Style.CommentText> Комментариев пока нет </Style.CommentText>
+                </Style.CommentEmpty>
+              )}
             </Style.AllComments>
           </Style.Comments>
         </Style.Content>

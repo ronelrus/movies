@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useComments = (id) => {
+export const useComments = (id: string) => {
     const [comments, setComments] = useState([]);
     useEffect(() => {
         const data = JSON.parse(window.localStorage.getItem(id));
@@ -8,7 +8,7 @@ export const useComments = (id) => {
             setComments(data);
     }, [id]);
 
-    const updateComments = (id, comment) => {
+    const updateComments = (id: string, comment) => {
         if (comment.name && comment.text) {
             const data = JSON.stringify([...comments, comment]);
             window.localStorage.setItem(id, data);
@@ -16,8 +16,7 @@ export const useComments = (id) => {
         }
     };
 
-    const deleteComment = (comment) => {
-        globalThis.dd = comments;
+    const deleteComment = (comment: string) => {
         const data = comments.filter((item) => item !== comment);
         setComments(data);
         localStorage.setItem(id, JSON.stringify(data));

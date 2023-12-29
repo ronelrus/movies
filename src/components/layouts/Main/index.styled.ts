@@ -4,6 +4,7 @@ export const App = styled.div`
     display:flex;
     width: 100%;
     height: 100%;
+    
 `;
 export const Content = styled.div`
     display:flex;
@@ -14,13 +15,27 @@ export const Content = styled.div`
     justify-content: center;
 `;
 
+// export const Background = styled.img`
+//     width: 100%;
+//     height: 100%;
+//     z-index: -55;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     opacity: 75%;
+//     object-fit: cover;
+//     `;
+
 export const Background = styled.img`
     width: 100%;
     height: 100%;
-    z-index: -55;
+    z-index: -1;
     position: fixed;
     top: 0;
     left: 0;
     opacity: 75%;
-    object-fit: cover;
-    `;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+`;

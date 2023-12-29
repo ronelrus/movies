@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { filmListQuery } from "@/lib/api";
 
-export const useFilmList = (currentPage: string, pageSize: string) => {
+export const useFilmList = (currentPage: string, pageSize: string, term : string, genre : string) => {
   const queryClient = useQueryClient();
 
   const {
@@ -11,9 +11,9 @@ export const useFilmList = (currentPage: string, pageSize: string) => {
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ["getFilmList", currentPage, pageSize],
-    queryFn: () => filmListQuery(currentPage, pageSize),
-    keepPreviousData: true,
+    queryKey: ["getFilmList", currentPage, pageSize, term, genre],
+    queryFn: () => filmListQuery(currentPage, pageSize, term, genre),
+    keepPreviousData: false,
     cacheTime: 1000 * 60 * 60,
     staleTime: 1000 * 60 * 60,
   });

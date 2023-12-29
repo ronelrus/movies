@@ -60,6 +60,7 @@ export const Logo = styled.div`
 export const Img = styled.img`
     display: flex;
     height: 30px;
+    cursor: pointer;
 `;
 export const Name = styled.span`
     display: inline-flex;
@@ -70,6 +71,7 @@ export const Name = styled.span`
     font-family: Roboto;
     letter-spacing: 1px;
     margin: 5px 0px 0px 0px;
+    cursor: pointer;
     @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTextM500};
     }

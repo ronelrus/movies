@@ -306,6 +306,24 @@ export const Comment = styled.div`
     border-radius: 7.5px;
 `;
 
+export const CommentEmpty = styled.div`
+    display: block;
+    flex-direction: column;
+    background: rgba(75, 75, 255, .2);
+    margin: 5px auto;
+    text-align: center;
+    width: 100%;
+    border-radius: 7.5px;
+    height: 79px;
+    justify: center;
+
+    & div {
+        width: fit-content;
+        position: relative;
+        
+    }
+`;
+
 export const CommentBody = styled.div`
     width: 98%;
 `;

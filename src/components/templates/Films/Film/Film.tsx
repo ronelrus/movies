@@ -3,10 +3,10 @@ import Link from "next/link";
 import React, { useState, useContext } from "react";
 import { VscStarFull } from "react-icons/vsc";
 import * as Style from "./index.styled";
-import { Context } from "@/components/common/Modal/ModalContext";
+import { ModalContext } from "@/components/common/Modal/ModalContext";
 
 const Film: React.FC<MovieList> = (props) => {
-  const { useFilm } = useContext(Context);
+  const { useFilm } = useContext(ModalContext);
   const [ cover, setCover ] = useState(props.medium_cover_image);
 
   return (

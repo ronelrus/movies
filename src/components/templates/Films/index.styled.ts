@@ -41,20 +41,6 @@ export const Content = styled.div`
     }
 `;
 
-export const Background = styled.img`
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 75%;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-`;
-
-
 export const Title = styled.span`
     letter-spacing: 1px;
     font-weight: 600;
@@ -101,6 +87,68 @@ export const List = styled.div`
     }
 `;
 
-export const Search = styled.input`
-    
+export const Search = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 15px 0;
+`;
+
+export const SearchRow = styled.div`
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+`;
+
+export const SearchInput = styled.input`
+    width: calc(100% - 100px);
+    border: 0;
+    border-radius: 10px;
+    padding: 0 10px;
+`;
+
+export const SearchButton = styled.button`
+    width: 100px;
+    border: 0;
+    border-radius: 15px;
+`;
+
+export const SearchBlock = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+`;
+
+export const SearchRadio = styled.input`
+`;
+
+export const SearchRadioLabel = styled.label`
+`;
+
+export const SearchSelect = styled.select`
+
+`;
+
+export const SearchSelectOption = styled.option`
+`;
+
+export const ListEmpty = styled.div`
+    display: flex;
+    width: 100%;
+    border-top: 1px solid ${props => props.theme.accentColor1};
+    border-bottom: 1px solid ${props => props.theme.accentColor1};
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: space-around;
+`;
+
+export const EmptyItems = styled.div`
+    display: block;
+    margin: 15px 0;
+    border-radius: 20px;
+    width: 500px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    color: ${props=> props.theme.textColor};
+    font-size: ${props => props.theme.textSizeTextL};
+    background-color: ${props => props.theme.backgroundColor};
 `;
