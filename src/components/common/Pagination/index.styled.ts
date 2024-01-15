@@ -41,7 +41,6 @@ export const Item = styled.div`
     transition: 0.1s;
     color: white;
     background-color:${props => props.theme.accentColor1};
-   
   }
   margin: 0px 10px 0px 0px;
   &:last-child{

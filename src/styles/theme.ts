@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const darkTheme = {
-  backgroundColor: "#1F2023",
+  backgroundColor: "rgba(31, 32, 35, 0.75)",
+  absoluteBackgroundColor: "rgb(31, 32, 35)",
+  borderColor: "rgb(255, 255, 255)",
   textColor: "#F5F5F5",
   infoIconColor: "#2D2F34",
   iconColor: "#27292D",
-  accentColor1: `rgb(106,192,69)`,
+  accentColor1: `rgb(108, 89, 209)`,
   accentColor2: "#00c6ff",
   shadowColor: "rgba(0,0,0,0.2)",
 
@@ -33,11 +35,13 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  backgroundColor: "white",
+  backgroundColor: "rgba(255, 255, 255, 0.75)",
+  absoluteBackgroundColor: "rgb(255, 255, 255)",
+  borderColor: "rgb(31, 32, 35)",
   textColor: "black",
   infoIconColor: "#FAFAFA",
   iconColor: "white",
-  accentColor1: `rgb(106,192,69)`,
+  accentColor1: `rgb(108, 89, 209)`,
   accentColor2: "#00c6ff",
   shadowColor: "rgba(0,0,0,0.2)",
 

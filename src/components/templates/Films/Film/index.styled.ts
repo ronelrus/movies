@@ -21,7 +21,7 @@ export const Card2 = styled.div`
 
 export const Rating = styled.div`
     display: flex;
-    flex: 0 0 auto;
+    flex: 0 0 50px;
     width: 100%;
     height: 30%;
     align-items: center;
@@ -30,17 +30,15 @@ export const Rating = styled.div`
 `;
 export const RatingIcon = styled.div`
     display: flex;
-    flex: 0 0 auto;
-    width: 100%;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 0 2px;
     color:  ${props=> props.theme.accentColor1};
     font-size: ${props=> props.theme.textSizeTitle};
 `;
 export const RatingText = styled.div`
     display: flex;
-    flex: 0 0 auto;
+    flex: 0 0 1;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -80,7 +78,7 @@ export const Details = styled.button`
     font-size: ${props=> props.theme.textSizeL};
     font-weight: 600;
     &:hover{
-        background-color: rgba(106,192,69,0.9);
+        background-color: rgba(108, 89, 209, 0.85);
     }
 `;
 
@@ -138,14 +136,17 @@ export const Name = styled.div`
     flex: 0 0 auto;
     flex-wrap: nowrap;
     width: 100%;
-    font-size: ${props => props.theme.textSizeTextM};
+    height: 20%;
+    font-size: ${props => props.theme.textSizeL};
     letter-spacing: 1px;
     overflow: hidden;
-    margin: 10px 0px 0px 0px;
-    padding: 0px 10px;
+    margin: 5px 0px 0px 0px;
+    padding: 0px 2px;
     box-sizing: border-box;
-    text-overflow: ellipsis;   
-    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: 1000;
+    
     @media (max-width: 992px) and (min-width: 768px)  {
         font-size: ${props => props.theme.textSizeTextM900};
     }
@@ -158,14 +159,15 @@ export const Name = styled.div`
 `;
 
 export const Text = styled.div`
-    margin: 10px 0px 10px 0px;
-    padding: 0px 10px;
-    display:flex;
+    margin: 0px 0px 10px auto;
+    padding: 0px 2px;
+    display:inline-flex;
     flex: 0 0 auto;
+    text-align: right;
     overflow: hidden;
-    word-wrap: break-word;
+    // word-wrap: break-word;
     word-break: break-all;
-    width: 100%;
+    width: fit-content;
     font-weight: 600;
     font-size: ${props => props.theme.textSizeTextS};
 `;

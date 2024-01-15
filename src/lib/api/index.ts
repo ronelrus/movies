@@ -34,7 +34,7 @@ export type MovieList = {
   }[];
 };
 
-export const filmListQuery = async (currentPage: string, pageSize: string, term: string, genre : string) => {
+export const filmListQuery = async (currentPage: string, pageSize: string, term: string, genre : string, sort : string) => {
   const response = await axios.get<{
     data: {
       movie_count: number;
@@ -42,7 +42,7 @@ export const filmListQuery = async (currentPage: string, pageSize: string, term:
       page_count: number;
       movies: MovieList[];
     };
-  }>(`list_movies.json?page=${currentPage}&limit=${pageSize}&query_term=${term}&genre=${genre}`);
+  }>(`list_movies.json?page=${currentPage}&limit=${pageSize}&query_term=${term}&genre=${genre}&sort_by=${sort}`);
   console.log(response)
   return response.data;
 };

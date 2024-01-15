@@ -5,6 +5,8 @@ type FilmsType = {
     useSearch : Function,
     genre : string,
     useGenre : Function,
+    sort: string,
+    useSort: Function,
 }
 
 export const FilmsContext = createContext({} as FilmsType);

@@ -6,12 +6,13 @@ export const Films = styled.section`
     height: 100%;
     flex: 0 0 auto;
     justify-content: center;
-    background-color: ${props => props.theme.bachgroundColor};
     transition: 0.1s;
 `;
 
 export const Content = styled.div`
     display: flex;
+    background: ${props => props.theme.backgroundColor};
+    border-radius: 3vh;
     flex-direction: column;
     width: 1000px;
     padding: 0px 20px;
@@ -101,21 +102,41 @@ export const SearchRow = styled.div`
 
 export const SearchInput = styled.input`
     width: calc(100% - 100px);
-    border: 0;
     border-radius: 10px;
     padding: 0 10px;
+    background: ${props => props.theme.absoluteBackgroundColor};
+    color: ${props => props.theme.textColor};
+    border-color: ${props => props.theme.borderColor};
+    border-radius: ${props => props.theme.borderRadius};
+
+    &::placeholder {
+        color: ${props => props.theme.textColor};
+    }
 `;
 
 export const SearchButton = styled.button`
     width: 100px;
-    border: 0;
-    border-radius: 15px;
+    border-radius: ${props => props.theme.borderRadius};
+    background: ${props => props.theme.absoluteBackgroundColor};
+    color: ${props => props.theme.textColor};
+    border-color: ${props => props.theme.borderColor};
+
+    &::placeholder {
+        color: ${props => props.theme.textColor};
+    }
+
+    &:hover{
+        transition: 0.1s;
+        color: white;
+        background-color:${props => props.theme.accentColor1};
+    }
 `;
 
 export const SearchBlock = styled.div`
     display: flex;
     flex-direction: row;
     width: 100px;
+    margin: 0 10px 0 0;
 `;
 
 export const SearchRadio = styled.input`
@@ -125,7 +146,15 @@ export const SearchRadioLabel = styled.label`
 `;
 
 export const SearchSelect = styled.select`
+    padding: 0 3px;
+    border-radius: ${props => props.theme.borderRadius};
+    background: ${props => props.theme.absoluteBackgroundColor};
+    color: ${props => props.theme.textColor};
+    border-color: ${props => props.theme.borderColor};
 
+    &::placeholder {
+        color: ${props => props.theme.textColor};
+    }
 `;
 
 export const SearchSelectOption = styled.option`
@@ -148,7 +177,7 @@ export const EmptyItems = styled.div`
     width: 500px;
     padding: 20px 0px;
     box-sizing: border-box;
-    color: ${props=> props.theme.textColor};
+    color: ${props => props.theme.textColor};
     font-size: ${props => props.theme.textSizeTextL};
     background-color: ${props => props.theme.backgroundColor};
 `;

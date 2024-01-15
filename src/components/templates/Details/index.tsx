@@ -16,11 +16,8 @@ import useComments from "@/hooks/useComments";
 const Details = React.FC<> = () => {
   const router = useRouter();
   const { film } = useContext(ModalContext);
-  const filmId = film || router.query.id;
-  const { filmRetrieve, isLoading } = useFilmRetrieve(
-    (filmId as string) || ''
-  );
-
+  const filmId = (film || router.query.id) as string;
+  const { filmRetrieve, isLoading } = useFilmRetrieve((filmId as string) || '');
   const { comments, updateComments, deleteComment } = useComments(filmId);
   const [comment, useComment] = useState({
     name: '',

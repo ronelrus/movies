@@ -1,5 +1,4 @@
 import { MovieList } from "@/lib/api";
-import Link from "next/link";
 import React, { useState, useContext } from "react";
 import { VscStarFull } from "react-icons/vsc";
 import * as Style from "./index.styled";
@@ -7,8 +6,7 @@ import { ModalContext } from "@/components/common/Modal/ModalContext";
 
 const Film: React.FC<MovieList> = (props) => {
   const { useFilm } = useContext(ModalContext);
-  const [ cover, setCover ] = useState(props.medium_cover_image);
-
+  const [cover, setCover] = useState(props.medium_cover_image);
   return (
     <Style.Film>
       <Style.Content>
@@ -18,15 +16,14 @@ const Film: React.FC<MovieList> = (props) => {
               cover
             }
             alt={props.medium_cover_image}
-            onError={ () => { setCover("https://klike.net/uploads/posts/2019-05/1556708032_1.jpg") } }
+            onError={() => { setCover("https://klike.net/uploads/posts/2019-05/1556708032_1.jpg") }}
           ></Style.Card1>
 
           <Style.Card2>
+            <Style.Name>{props.title}</Style.Name>
             <Style.Rating>
-              <Style.RatingIcon>
-                <VscStarFull />
-              </Style.RatingIcon>
-              <Style.RatingText> {props.rating} / 10</Style.RatingText>
+              <Style.RatingText>
+                 <Style.RatingIcon><VscStarFull /></Style.RatingIcon>{props.rating} / 10</Style.RatingText>
             </Style.Rating>
 
             {props.genres ? (
@@ -57,18 +54,16 @@ const Film: React.FC<MovieList> = (props) => {
               ""
             )}
 
+
+            <Style.Text>
+              {props.year} <sup>{props.language}</sup>
+            </Style.Text>
             <Style.Details onClick={() => {
               useFilm(props.id);
               document.body.style.overflow = 'hidden';
             }}>DETAILS</Style.Details>
           </Style.Card2>
         </Style.Cards>
-
-        <Style.Name>{props.title}</Style.Name>
-
-        <Style.Text>
-          {props.year} {props.language}
-        </Style.Text>
       </Style.Content>
     </Style.Film>
   );

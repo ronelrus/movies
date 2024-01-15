@@ -15,8 +15,9 @@ export const ModalContainer = styled.div`
 
 export const ModalBody = styled.div`
     width: fit-content;
-    background: ${props => props.theme.backgroundColor};
-    display: block;
+    background: ${props => props.theme.absoluteBackgroundColor};
+    display: flex;
+    position: relative;
     top: 0;
     height: 100%;
     margin: 0 auto;
@@ -30,14 +31,13 @@ export const ModalBody = styled.div`
 `;
 
 export const Close = styled.button`
+    background: none;
     width: 28px;
     height: 28px;
-    position: relative;
-    background: url('https://cdn-icons-png.flaticon.com/512/1828/1828778.png');
-    background-size: cover;
+    font-size: 40px;
+    color: ${props => props.theme.textColor};
+    position: fixed;
     border: 0;
     cursor: pointer;
-    float: inline-end;
-    margin: 7px 7px 0 0;
     z-index: 118;
-`;
+`;  

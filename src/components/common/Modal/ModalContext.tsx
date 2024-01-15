@@ -1,3 +1,8 @@
 import { createContext } from "react";
 
-export const ModalContext = createContext({});
+type ModalType = {
+    film: string,
+    useFilm: Function,
+};
+
+export const ModalContext = createContext({} as ModalType);
